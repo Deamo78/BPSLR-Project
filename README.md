@@ -1,6 +1,6 @@
 Welcome to our first github project
 
-Ive got two legs
+Ive got two legs man
 
                                 /  \      __
     .---.                  _   /   /   _.~  \
