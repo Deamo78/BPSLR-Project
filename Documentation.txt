@@ -1,0 +1,19 @@
+Documentation - 2024/05/23 - Phoebe Cooney
+
+------------Host-------------
+Static IP address-
+IP address: 192.168.100.3
+Subnet mask: 255.255.255.0
+Default gateway: 192.168.100.1
+
+DNS server address-
+Preferred DNS server: 8.8.8.8
+
+
+--------Client Prod------------
+Login/User:Phoebe
+Password:Password1
+
+-------Kaliexternal------------
+Login:kaliexternal
+Password:password1
