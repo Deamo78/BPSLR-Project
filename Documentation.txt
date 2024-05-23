@@ -1,0 +1,15 @@
+This is documentation about the VM's that I have installed for the production network. It contains when and what stage I am up to with each machine. It also includes the credidentials required to log in into each VM.
+
+---=Documentation=---
+
+
+
+
+
+
+23/05/24	KaliSIEM has been freshly installed and yet to be configured
+21/05/24	Windows 10 Client has been installed and yet to be configued
+
+---=KaliSIEM Credidentials=---
+login: kalisiem
+password: Password1
