@@ -11,23 +11,23 @@ Date: 23/05/2024
 VM's
 
 Windows 10 Client 
-    -PC-Name: DESKTOP-RYAN
-    -Username: Ryan
-    -Password: Password1
--OS: Windows 10 (64-Bit)
--iso: en_windows_10_eval_22h2_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso
--Specs: 8GB RAM, 2 CPU Threads, 50GB Storage
--Network Adapter: Bridged Adapter
-    -Name: Realtek PCIe GBE Family Controller
+    - PC-Name: DESKTOP-RYAN
+    - Username: Ryan
+    - Password: Password1
+- OS: Windows 10 (64-Bit)
+- iso: en_windows_10_eval_22h2_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso
+- Specs: 8GB RAM, 2 CPU Threads, 50GB Storage
+- Network Adapter: Bridged Adapter
+    - Name: Realtek PCIe GBE Family Controller
 
 Kali Internal
-    -Username: kaliinternal
-    -Password: 799EQmwF
--OS: Linux, Ubuntu (64-bit)
--iso: kali-linux-2023.4-installer-purple-amd64.iso
--Specs: 4GB RAM, 1 CPU Threads, 50GB Storage
--Network Adapter: Bridged Adapter
-    -Name: Realtek PCIe GBE Family Controller
+    - Username: kaliinternal
+    - Password: 799EQmwF
+- OS: Linux, Ubuntu (64-bit)
+- iso: kali-linux-2023.4-installer-purple-amd64.iso
+- Specs: 4GB RAM, 1 CPU Threads, 50GB Storage
+- Network Adapter: Bridged Adapter
+    - Name: Realtek PCIe GBE Family Controller
 
 
 Tasks Assigned:
