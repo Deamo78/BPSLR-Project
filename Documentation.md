@@ -1,7 +1,7 @@
 DOCUMENTATION
 
 
-                                                # Day One
+                                                Day One
                                             
 Name: *Ryan Saunders*  
 Date: *23/05/2024*  
@@ -75,7 +75,7 @@ $ping 8.8.8.8
 ```
 
 
-                                                 # Day Two
+                                                Day Two
                                             
 Name: *Ryan Saunders*  
 Date: *28/05/2024*  
