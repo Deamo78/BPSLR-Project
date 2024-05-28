@@ -56,7 +56,7 @@ It has internet connection and is able to ping the server, as well as the switch
 
 
 Commands Used:
-
+```
 $sudo apt update  
 $sudo apt upgrade -y
 
@@ -73,7 +73,7 @@ nameserver 8.8.8.8
 
 $ping 192.168.100.254
 $ping 8.8.8.8
-
+```
 
 #####################################################################################################
                                                 
