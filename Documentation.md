@@ -3,8 +3,8 @@ DOCUMENTATION
 
                                                 Day One
                                             
-Name: *Ryan Saunders*
-Date: *23/05/2024*
+Name: *Ryan Saunders*  
+Date: *23/05/2024*  
 
 
 **VM's:**
@@ -77,8 +77,8 @@ $ping 8.8.8.8
 
                                                  Day Two
                                             
-Name: *Ryan Saunders*
-Date: *28/05/2024*
+Name: *Ryan Saunders*  
+Date: *28/05/2024*  
 
 
 **VM's:**
