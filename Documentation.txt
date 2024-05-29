@@ -10,7 +10,7 @@ This is documentation about the VM's that I have installed for the production ne
 
 
 
-
+28/05/24 Installed ElasticSearch & Kibana onto the KaliSIEM
 23/05/24	KaliSIEM has been freshly installed and yet to be configured
 21/05/24	Windows 10 Client has been installed and yet to be configued
 ---=KaliSIEM VM Credidentials=---
