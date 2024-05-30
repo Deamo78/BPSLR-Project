@@ -1,4 +1,7 @@
-Documentation - 2024/05/23 - Phoebe Cooney
+Documentation
+
+
+2024/05/23 - Phoebe Cooney
 
 ------------Host-------------
 Static IP address-
@@ -17,3 +20,16 @@ Password:Password1
 -------Kaliexternal------------
 Login:kaliexternal
 Password:password1
+
+
+
+---Commands used to Install VBox - Guest Additions on KaliPurple Prod------------------
+1. Copy and paste the cdrom0 - Thunar disc contents to the DOWNLOADS folder.
+2. Open terminal and type 'cd Downloads', then it is in the directory.
+3. Type in 'chmod 755 VBoxLinuxAdditions.run' to overwrite permissions.
+4. Type the 'sudo ./VBoxLinuxAdditions.run' command to execute the file.
+5. Restart the VM to confirm and start the VBox - Guest Additions.
+6. You should now have Guest Additions on your VM.
+
+
+
