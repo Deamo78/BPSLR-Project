@@ -29,8 +29,9 @@ Password:password1
 2. Open terminal and type 'cd Downloads', then it is in the directory.
 3. Type in 'chmod 755 VBoxLinuxAdditions.run' to overwrite permissions.
 4. Type the 'sudo ./VBoxLinuxAdditions.run' command to execute the file.
-5. Restart the VM to confirm and start the VBox - Guest Additions.
-6. You should now have Guest Additions on your VM.
+5. Follow the commands to install (type 'y' when prompt appears).
+6. Restart the VM to confirm and start the VBox - Guest Additions.
+7. You should now have Guest Additions on your VM.
 
 
 
