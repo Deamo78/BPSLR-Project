@@ -34,4 +34,25 @@ Password:password1
 7. You should now have Guest Additions on your VM.
 
 
+---LP.local---Prototype---
+What Steve told me:
+This connects to the firewall/domain/server.
+In change adapter options, go to the configuration for the LP.local network.
+Once in the configuration, enable the static IP option.
+Make host machine's IP Address "192.168.150.254".
+Make the host machine's subnet mask "255.255.255.0".
+
+This might be this static ip and subnet mask cos in the production for kaliexternal, 
+I needed to create a new host-only network, Steve helped me do this and said I needed the ip address "192.168.150.254" for the DMZ Server VM.
+
+I'm not sure if the DMZ Server effects the LP.local server, and when I patch into the firewall.
+
+
+
+
+
+
+
+
+
 
