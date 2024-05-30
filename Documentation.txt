@@ -22,6 +22,7 @@ Login:kaliexternal
 Password:password1
 
 
+2024/05/30 - Phoebe Cooney
 
 ---Commands used to Install VBox - Guest Additions on KaliPurple Prod------------------
 1. Copy and paste the cdrom0 - Thunar disc contents to the DOWNLOADS folder.
