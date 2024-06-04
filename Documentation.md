@@ -173,7 +173,7 @@ Add Elastic rules - Install All , Go back to Installed Elastic rules
 Rules must be enabled , view Potential Successful SSH Brute Force Attack - enable  
 hydra attack against linux target via ssh brute force password guessing  
 
-**Commands/Scripts used:**
+**Commands/Scripts used:**  
 PowerShell Script used
 ```
 $ProgressPreference = 'SilentlyContinue'
