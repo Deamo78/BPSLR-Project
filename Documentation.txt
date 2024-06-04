@@ -55,6 +55,7 @@ I'm not sure if the DMZ Server effects the LP.local server, and when I patch int
 ------I'm currently up to 11.1.6 Control script stages via Mutex interface and 11.1.7 Make a copy of test01 called test02 and edit-------
 
 DURING THIS LESSON I HAVE COMPLETED 11.1.6 AND INSTALLED THE CODE FROM THE MAIN BRANCH, ONTO MY CLIENT'S POWERSHELL (RAN AS ADMINISTRATOR).
+NOW I'M UP TO 11.1.7.
 
 The url to go to http://192.168.100.200:443, is actually 127.0.0.1:443.
 I have gone onto this website/local host(me), and typed in offsec as my login and password.
