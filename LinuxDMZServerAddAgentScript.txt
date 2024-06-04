@@ -2,3 +2,8 @@ curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-ag
 tar xzvf elastic-agent-8.13.4-linux-x86_64.tar.gz
 cd elastic-agent-8.13.4-linux-x86_64
 sudo ./elastic-agent install --url=https://192.168.100.200:8220 --enrollment-token=TEpubjRZOEJHNXVReHk0cGgwcEc6b09iWDRHN21RbGEtUkZNVDJKY2pLQQ== --insecure
+
+curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.13.4-linux-x86_64.tar.gz
+tar xzvf elastic-agent-8.13.4-linux-x86_64.tar.gz
+cd elastic-agent-8.13.4-linux-x86_64
+sudo ./elastic-agent install --url=https://192.168.100.200:8220 --enrollment-token=TEpubjRZOEJHNXVReHk0cGgwcEc6b09iWDRHN21RbGEtUkZNVDJKY2pLQQ== --insecure
