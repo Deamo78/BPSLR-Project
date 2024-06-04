@@ -130,7 +130,7 @@ IP address 192.168.100.10 was Brodys Win 10 client PC. We had to make sure Netwo
                                                 Day Three
 
 Name: *Ryan Saunders*  
-Date: 04*/06/2024*  
+Date: *04/06/2024*
 
 
 **VM's:**
