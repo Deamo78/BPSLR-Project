@@ -1,0 +1,24 @@
+Weekly meeting 4/5/2024 time 3:36 
+
+
+
+
+
+agenda: 
+discussion on our windows 10 client 
+
+agenda 2 
+marking objectives of  with trello
+
+checking off each members objectives
+sebastion completed prototpye 
+phoebe completed prototype 
+Luke done the 6.3 prototype 
+
+angenda 3 
+Phoebe and ryan working on internal and external kali's 
+
+
+action: put notes on documentation 
+action: do the configuration of vlan 
+action install elastic defend on dmz 
