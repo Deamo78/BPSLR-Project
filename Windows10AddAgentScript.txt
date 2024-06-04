@@ -1,0 +1,5 @@
+$ProgressPreference = 'SilentlyContinue'
+Invoke-WebRequest -Uri https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.13.4-windows-x86_64.zip -OutFile elastic-agent-8.13.4-windows-x86_64.zip
+Expand-Archive .\elastic-agent-8.13.4-windows-x86_64.zip -DestinationPath .
+cd elastic-agent-8.13.4-windows-x86_64
+.\elastic-agent.exe install --url=https://192.168.100.200:8220 --enrollment-token=TWtxMXg0OEJLMDFVWTVTamhQaXU6MDhfVi0wWXRRYXU0azdVVVRBbjhNUQ== --insecure
