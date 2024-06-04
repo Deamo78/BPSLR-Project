@@ -52,7 +52,7 @@ I'm not sure if the DMZ Server effects the LP.local server, and when I patch int
 2024/06/04 - Phoebe Cooney
 
 ------I'm up to 11.1.7 Make a copy of test01 called test02 and edit-------
-------I also need to install/copy what is in the main branch into the powershell (run as Administrator)-------------
+------I also need to install/copy what is in the main branch into the powershell (run as Administrator) on my Production Client-------------
 
 
 
