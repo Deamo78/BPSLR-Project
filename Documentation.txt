@@ -63,10 +63,30 @@ DURING THIS LESSON I HAVE COMPLETED 11.1.6, 11.1.7 AND INSTALLED THE CODE FROM T
 I have completed 11.1.7, now I'm up to 11.2 Enumeration with NMAP scans.
 
 
+2024/06/6 - Phoebe Cooney
 
+----Kaliexternal----
+My Kaliexternal had UI issues that caused my windows to be frozen in place and have missing buttons.
+Writing the command 'xfwm4' made the desktop environment restart, which in effect has reset everything back to normal and in working order.
+I also had an issue with the VirtualBox and Guest Additions, I had to reinstall the linux headers directly.
+The commands I used in Kali Purple were the following (to fix the VirtualBox Guest Additions and the headers):
 
+uname -r (check your current kernel version)
+sudo apt-get update 
+sudo apt-get -y dist-upgrade 
+reboot 
+uname -r (check your new kernel version)
 
+sudo apt-get -y install linux-headers-$(uname -r)
 
+cd /media/cdrom0/
+sudo sh VBoxLinuxAdditions.run
+
+xfwm4 - Link to how to fix Kaliexternal UI:
+https://forums.kali.org/showthread.php?46775-Kali-UI-went-weird-missing-close-minimize-maximize-shown-only-1-workplace-but-in-settings-its-2
+
+Link to fix Guest Additions:
+https://www.reddit.com/r/virtualbox/comments/19dj8ce/cannot_get_guest_additions_to_work_with_kali/?rdt=40953
 
 
 
