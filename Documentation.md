@@ -6,8 +6,8 @@
 
 - Connected directly to management interface on firewall with ethernet cable
 - Accessed firewall management through web browser
-  https://192.168.1.1
-  Username: admin
+  https://192.168.1.1  
+  Username: admin  
   Password: Password1
 
 **1.2 Palo Alto Firewall - basic feature configuration**
@@ -79,6 +79,8 @@ Memory: 4.00 GB
 Network Adapter 1: Bridged Adapter  
 VM Host Static IP Address: 192.168.100.4  
 
+After Windows Server DHCP has been set up, IP configuration will changed from static to DHCP  
+
 *Next Session: 7.0 PaloAlto Firewall Settings*
 
 ---
@@ -137,41 +139,56 @@ show ip ssh
 ```
 
 - Management VLAN has been changed from default VLAN1 to VLAN100 (this required console connection again after removing the IP address from VLAN1)
-- Unused switch ports have been shutdown
+- Unused switch ports have been shutdown:
+
+```
+interface range G1/0/7 - 52
+shutdown
+```
 
 Note: port-security
 
-*Next Session:  9.4 Configure and test management VLAN / host isolation* - finish this
+*Next Session:  9.4 Configure and test management VLAN / host isolation* - finish this  
                         *9.11 Cisco switch logging to Fleet*
 
 ---
 
 *6/06/2024*
 
-- Issues: No connection with other internal devices after changing G1/0/4 to Management VLAN 100, either the devices will all need to be on the same VLAN or inter-VLAN routing needs to be configured on the Layer 3 Switch
+- Issues: No connection with other internal devices after assigning G1/0/4 to Management VLAN 100, either the devices will all need to be on the same VLAN or inter-VLAN routing needs to be configured on the Layer 3 Switch
 - Also, cannot SSH to switch now that my device is no longer on the same VLAN (must use console connection once again)
 
-- VLAN 100 port assignment, can also change name of VLAN to Management
+- VLAN 100 creation, port assignment, and port-security
 
 ```
-interface range XXXXX G1/0/1 - 6
+vlan 100
+name Management
+exit
+
+interface range G1/0/1 - 6
 switchport mode access
 switchport access vlan 100
-```
 
-```
-interface range XXXXXXXXXXXX G1/0/1 - 6
-switchport mode access
 switchport port-security
 switchport port-security maximum 4
 switchport port-security mac-address sticky
 
 show port security
-show port security F0/0 XXXXXX change interface 
-show interface F0/0 XXXXXX change interface 
+show port security G1/0/4
+show interface G1/0/4
 
-show run | begin interface XXXXXX
+show run | begin interface G1/0/1
 show port-security address
+```
+
+- Issues: after using the switchport port-security command, all interfaces went down in error-disabled state as the default max number of MAC addresses (1) had been exceeded due to bridged networking (some ports had multiple VMs running all with separate MAC addresses that triggered the shutdown violation)
+- To counter this, next session a list of trusted MAC addresses will be added to the switch config instead of setting a max. number of addresses per port
+- To bring the interfaces back up after violation shutdown:
+
+```
+interface range G1/0/1 - 6
+shutdown
+no shutdown
 ```
 
 - Port-security will cause a port to transition to a shutdown state if the limit of 4 MAC addresses is exceeded
@@ -201,5 +218,5 @@ logging trap 4
 logging facility auth
 ```
 
-- Need seb to install cisco ios elastic integration on siem
+- Need seb to install Cisco IOS elastic integration on SIEM
 - NTP if time permits
