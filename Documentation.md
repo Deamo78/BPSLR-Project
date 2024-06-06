@@ -182,3 +182,87 @@ Expand-Archive .\elastic-agent-8.13.4-windows-x86_64.zip -DestinationPath .
 cd elastic-agent-8.13.4-windows-x86_64
 .\elastic-agent.exe install --url=https://192.168.100.200:8220 --enrollment-token=TWtxMXg0OEJLMDFVWTVTamhQaXU6MDhfVi0wWXRRYXU0azdVVVRBbjhNUQ== --insecure
 ```
+
+                                                Day Four
+
+Name: *Ryan Saunders*  
+Date: *06/06/2024*
+
+
+**VM's:**
+
+**Windows 10 Client**
+    - PC-Name: DESKTOP-RYAN
+    - Username: Ryan
+    - Password: Password1
+- OS: Windows 10 (64-Bit)
+- iso: en_windows_10_eval_22h2_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso
+- Specs: 8GB RAM, 2 CPU Threads, 50GB Storage
+- Network Adapter: Bridged Adapter
+    - Name: Realtek PCIe GBE Family Controller
+
+**Kali Internal**
+    - Username: kaliinternal
+    - Password: password1
+- OS: Linux, Ubuntu (64-bit)
+- iso: kali-linux-2023.4-installer-purple-amd64.iso
+- Specs: 4GB RAM, 1 CPU Threads, 50GB Storage
+- Network Adapter: Bridged Adapter
+    - Name: Realtek PCIe GBE Family Controller
+
+**Tasks Assigned:**
+- Kali Purple (Internal)
+Installing Elastic and kibana  
+Testing RBT activities  
+Configuring Elastic security alerts and rules  
+
+**Tasks Completed:**
+- Installed Elastic and Kibana
+Encyption keys:
+xpack.encryptedSavedObjects.encryptionKey: 71d561c9882a7914d322cf9056fe7c1e
+xpack.reporting.encryptionKey: 6ce999468e75b93d22b7cfd5610e8b77
+xpack.security.encryptionKey: c9bec62bb0bf108c2d1d872f6930ee91  
+
+**Commands/Scripts used:**  
+
+```
+sudo apt update && sudo apt upgrade 
+sudo bash -c "export HOSTNAME=kaliinternal.lp.local; apt-get install elasticsearch -y"
+
+sudo sed -e '/cluster.initial_master_nodes/ s/^#*/#/' -i /etc/elasticsearch/elasticsearch.yml 
+echo "discovery.type: single-node" | sudo tee -a /etc/elasticsearch/elasticsearch.yml  
+
+sudo cat /etc/hosts  
+sudo nano /etc/hosts
+
+127.0.0.1       localhost
+127.0.1.1       kaliinternal.lp.local   kaliinternal
+192.168.100.200 kaliinternal.lp.local   kaliinternal
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters  
+
+dnsdomainname  
+ping kaliinternal.lp.local  
+
+
+sudo apt install kibana  
+
+sudo /usr/share/kibana/bin/kibana-encryption-keys generate –q  
+
+echo "server.host: \"kaliinternal.lp.local\"" | sudo tee -a /etc/kibana/kibana.yml 
+sudo systemctl enable elasticsearch kibana --now  
+
+systemctl status kibana 
+systemctl status elasticsearch
+
+sudo /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
+
+
+```
+
+**Issues**
+- Cant connect to Elatic or Kibana even though the theyre running perfectly fine
+  Possible work around - just use another PC thats internal (Sebs PC) or find a way to fix the issue for next time
