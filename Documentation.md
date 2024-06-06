@@ -145,3 +145,61 @@ Note: port-security
                         *9.11 Cisco switch logging to Fleet*
 
 ---
+
+*6/06/2024*
+
+- Issues: No connection with other internal devices after changing G1/0/4 to Management VLAN 100, either the devices will all need to be on the same VLAN or inter-VLAN routing needs to be configured on the Layer 3 Switch
+- Also, cannot SSH to switch now that my device is no longer on the same VLAN (must use console connection once again)
+
+- VLAN 100 port assignment, can also change name of VLAN to Management
+
+```
+interface range XXXXX G1/0/1 - 6
+switchport mode access
+switchport access vlan 100
+```
+
+```
+interface range XXXXXXXXXXXX G1/0/1 - 6
+switchport mode access
+switchport port-security
+switchport port-security maximum 4
+switchport port-security mac-address sticky
+
+show port security
+show port security F0/0 XXXXXX change interface 
+show interface F0/0 XXXXXX change interface 
+
+show run | begin interface XXXXXX
+show port-security address
+```
+
+- Port-security will cause a port to transition to a shutdown state if the limit of 4 MAC addresses is exceeded
+- Use the show running-config to check that MAC addresses are sticking
+
+- ACL to restrict VTY lines to management IP addresses on internal network
+- Check with Steve about vty line numbers (0-4 vs 5-15)
+
+```
+ip access-list standard ADMIN-MGMT
+permit 192.168.100.0 0.0.0.255
+
+line vty 0 4
+access-class ADMIN-MGMT in
+
+show accesss-lists
+```
+
+- Cisco switch logging, port-security logging (auto if violation mode is shutdown by default)
+
+```
+configure terminal
+service timestamps log datetime
+service sequence-numbers
+logging 192.168.100.200
+logging trap 4
+logging facility auth
+```
+
+- Need seb to install cisco ios elastic integration on siem
+- NTP if time permits
