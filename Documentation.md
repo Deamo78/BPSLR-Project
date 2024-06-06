@@ -217,10 +217,10 @@ Testing RBT activities
 Configuring Elastic security alerts and rules  
 
 **Tasks Completed:**
-- Installed Elastic and Kibana
-Encyption keys:
-xpack.encryptedSavedObjects.encryptionKey: 71d561c9882a7914d322cf9056fe7c1e
-xpack.reporting.encryptionKey: 6ce999468e75b93d22b7cfd5610e8b77
+- Installed Elastic and Kibana  
+Encyption keys:  
+xpack.encryptedSavedObjects.encryptionKey: 71d561c9882a7914d322cf9056fe7c1e  
+xpack.reporting.encryptionKey: 6ce999468e75b93d22b7cfd5610e8b77  
 xpack.security.encryptionKey: c9bec62bb0bf108c2d1d872f6930ee91  
 
 **Commands/Scripts used:**  
