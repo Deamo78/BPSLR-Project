@@ -21,6 +21,7 @@
 - Source NAT
 - Security Policies
 - Network Management Profile (allows firewall management from internal network)
+   - https://192.168.100.1
 
 **1.3 Switch SW1 - basic setup**
 
@@ -120,7 +121,7 @@ Palo Alto Firewall is now ready to be integrated with Kali Purple SIEM after Seb
 
 **9.4 Configure and test management VLAN / host isolation**
 
-- Switch has been configured for secure remote access using local database
+Switch has been configured for secure remote access using local database:
 
 ```
 service password-encryption  
@@ -138,8 +139,8 @@ exec-timeout 10
 show ip ssh
 ```
 
-- Management VLAN has been changed from default VLAN1 to VLAN100 (this required console connection again after removing the IP address from VLAN1)
-- Unused switch ports have been shutdown:
+- Management VLAN has been changed from default VLAN1 to VLAN100 (this required console connection again after removing the IP address from VLAN1)  
+Unused switch ports have been shutdown:
 
 ```
 interface range G1/0/7 - 52
@@ -148,17 +149,16 @@ shutdown
 
 Note: port-security
 
-*Next Session:  9.4 Configure and test management VLAN / host isolation* - finish this  
-                        *9.11 Cisco switch logging to Fleet*
+*Next Session: finish 9.4 Configure and test management VLAN / host isolation*, *9.11 Cisco switch logging to Fleet*  
 
 ---
 
 *6/06/2024*
 
 - Issues: No connection with other internal devices after assigning G1/0/4 to Management VLAN 100, either the devices will all need to be on the same VLAN or inter-VLAN routing needs to be configured on the Layer 3 Switch
-- Also, cannot SSH to switch now that my device is no longer on the same VLAN (must use console connection once again)
+- Also, cannot SSH to switch now that my device is no longer on the same VLAN (must use console connection once again)  
 
-- VLAN 100 creation, port assignment, and port-security
+VLAN 100 creation, port assignment, and port-security
 
 ```
 vlan 100
@@ -182,8 +182,8 @@ show port-security address
 ```
 
 - Issues: after using the switchport port-security command, all interfaces went down in error-disabled state as the default max number of MAC addresses (1) had been exceeded due to bridged networking (some ports had multiple VMs running all with separate MAC addresses that triggered the shutdown violation)
-- To counter this, next session a list of trusted MAC addresses will be added to the switch config instead of setting a max. number of addresses per port
-- To bring the interfaces back up after violation shutdown:
+- To counter this, next session a list of trusted MAC addresses will be added to the switch config instead of setting a max. number of addresses per port  
+To bring the interfaces back up after violation shutdown:
 
 ```
 interface range G1/0/1 - 6
@@ -193,9 +193,9 @@ no shutdown
 
 - Port-security will cause a port to transition to a shutdown state if the limit of 4 MAC addresses is exceeded
 - Use the show running-config to check that MAC addresses are sticking
+- Check with Steve about vty line numbers (0-4 vs 5-15)  
 
-- ACL to restrict VTY lines to management IP addresses on internal network
-- Check with Steve about vty line numbers (0-4 vs 5-15)
+ACL to restrict VTY lines to management IP addresses on internal network:
 
 ```
 ip access-list standard ADMIN-MGMT
@@ -207,7 +207,7 @@ access-class ADMIN-MGMT in
 show accesss-lists
 ```
 
-- Cisco switch logging, port-security logging (auto if violation mode is shutdown by default)
+Cisco switch logging, port-security logging (auto if violation mode is shutdown by default)
 
 ```
 configure terminal
