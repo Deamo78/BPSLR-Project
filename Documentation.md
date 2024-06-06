@@ -140,6 +140,7 @@ show ip ssh
 ```
 
 - Management VLAN has been changed from default VLAN1 to VLAN100 (this required console connection again after removing the IP address from VLAN1)  
+
 Unused switch ports have been shutdown:
 
 ```
@@ -183,6 +184,7 @@ show port-security address
 
 - Issues: after using the switchport port-security command, all interfaces went down in error-disabled state as the default max number of MAC addresses (1) had been exceeded due to bridged networking (some ports had multiple VMs running all with separate MAC addresses that triggered the shutdown violation)
 - To counter this, next session a list of trusted MAC addresses will be added to the switch config instead of setting a max. number of addresses per port  
+
 To bring the interfaces back up after violation shutdown:
 
 ```
@@ -207,7 +209,7 @@ access-class ADMIN-MGMT in
 show accesss-lists
 ```
 
-Cisco switch logging, port-security logging (auto if violation mode is shutdown by default)
+Cisco switch logging, port-security logging (auto if violation mode is shutdown by default):
 
 ```
 configure terminal
@@ -219,4 +221,6 @@ logging facility auth
 ```
 
 - Need seb to install Cisco IOS elastic integration on SIEM
-- NTP if time permits
+- NTP if time permits  
+
+Elastic agent has been installed on Windows 10 Client and successfully integrated with the Fleet server on SIEM
