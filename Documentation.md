@@ -73,11 +73,11 @@ Note: DMZ will be connected to firewall E1/3 after Luke has configured DMZ VM
 
 **2.5 Install windows 10/11 Clients**
 
-Device Name: DESKTOP-BRODY
-OS: Windows 10 Enterprise Evaluation
-Memory: 4.00 GB
-Network Adapter 1: Bridged Adapter
-VM Host Static IP Address: 192.168.100.4
+Device Name: DESKTOP-BRODY  
+OS: Windows 10 Enterprise Evaluation  
+Memory: 4.00 GB  
+Network Adapter 1: Bridged Adapter  
+VM Host Static IP Address: 192.168.100.4  
 
 *Next Session: 7.0 PaloAlto Firewall Settings*
 
