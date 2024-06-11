@@ -63,7 +63,7 @@ DURING THIS LESSON I HAVE COMPLETED 11.1.6, 11.1.7 AND INSTALLED THE CODE FROM T
 I have completed 11.1.7, now I'm up to 11.2 Enumeration with NMAP scans.
 
 
-2024/06/6 - Phoebe Cooney
+2024/06/06 - Phoebe Cooney
 
 ----Kaliexternal----
 My Kaliexternal had UI issues that caused my windows to be frozen in place and have missing buttons.
@@ -87,6 +87,15 @@ https://forums.kali.org/showthread.php?46775-Kali-UI-went-weird-missing-close-mi
 
 Link to fix Guest Additions:
 https://www.reddit.com/r/virtualbox/comments/19dj8ce/cannot_get_guest_additions_to_work_with_kali/?rdt=40953
+
+
+2024/06/11 - Phoebe Cooney
+###GREENBONE###
+
+Finished installing Greenbone - The user name and password is below to login to Greenbone
+Username: Phoebe
+Password: Password
+Refer to Screencaps in File explorer, in my Phoebe HDD.
 
 
 
