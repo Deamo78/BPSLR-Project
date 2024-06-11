@@ -224,3 +224,32 @@ logging facility auth
 - NTP if time permits  
 
 Elastic agent has been installed on Windows 10 Client and successfully integrated with the Fleet server on SIEM
+
+---
+
+*11/06/2024*
+
+Changed switch port-security method from using dynamic sticky MAC addresses to static MAC entries (as per Steve's recommendations)  
+
+Had issue "Found duplicate mac-address" when trying to manually configure MAC address for a device already connected to the port. This required that the affected device be disconnected from the network, their interface settings restored to default, and static configuration applied before they reconnected to the network.
+
+```
+default interface g1/0/2
+default interface g1/0/3
+default interface g1/0/4
+default interface g1/0/5
+default interface g1/0/6
+```
+
+Each port must be configured manually with all MAC addresses (including the host PC, and all VMs running on that PC)
+
+Final Port-security configuration commands (for Brody - G1/0/4): 
+
+```
+switchport mode access
+switchport access vlan 100
+switchport port-security
+switchport port-security maximum 5
+switchport port-security mac-address 0800.2750.bef5 vlan access
+switchport port-security mac-address 74d4.355f.70c7 vlan access
+```
