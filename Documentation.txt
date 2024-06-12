@@ -4,7 +4,7 @@ This is documentation about the VM's that I have installed for the production ne
 
 
 
-
+11/06/24 Installed CISO IOS intergration onto the elastic, and have configured the switch to send logs between the two
 04/06/24 Connected Windows10 Clients to Elastic and DMZ web server, up to step 8.5
 28/05/24 Installed ElasticSearch & Kibana onto the KaliSIEM
 23/05/24	KaliSIEM has been freshly installed and yet to be configured
