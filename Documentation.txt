@@ -98,6 +98,13 @@ Password: Password
 Refer to Screencaps in File explorer, in my Phoebe HDD.
 
 
+2024/06/13 - Phoebe Cooney
+###GREENBONE###
+I'm up to fixing the error [msg] in Greenbone, when trying to scan for 11.3. It should work cos we have downloaded the port list - but isn't working.
+To do: Research what is happening and how to fix it. Search up the Error msg, what does it mean.
+Error msg - 'Failed to find port_list '33d0cd82-57c6-11e1-8ed1-406186ea4fc5'.
+
+
 
 
 
