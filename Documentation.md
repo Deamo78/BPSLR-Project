@@ -336,3 +336,53 @@ sudo /usr/share/kibana/bin/kibana-encryption-keys generate
 
 **Issues**
 - Previously had an issue accessing Elastic. Now its fixed.
+
+                                                Day Six
+                                            
+Name: *Ryan Saunders*  
+Date: *13/06/2024*  
+
+
+**VM's:**
+
+**Windows 10 Client**
+    - PC-Name: DESKTOP-RYAN
+    - Username: Ryan
+    - Password: Password1
+- OS: Windows 10 (64-Bit)
+- iso: en_windows_10_eval_22h2_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso
+- Specs: 8GB RAM, 2 CPU Threads, 50GB Storage
+- Network Adapter: Bridged Adapter
+    -Name: Realtek PCIe GBE Family Controller
+
+**Kali Internal**
+    - Username: kaliinternal
+    - Password: Password2
+- OS: Linux, Ubuntu (64-bit)
+- iso: kali-linux-2023.4-installer-purple-amd64.iso
+- Specs: 4GB RAM, 1 CPU Threads, 50GB Storage
+- Network Adapter: Bridged Adapter
+    - Name: Realtek PCIe GBE Family Controller
+
+**Tasks Assigned:**
+- Kali Purple (Internal)
+Elastic security alerts and rules setup
+
+**Tasks Completed:**
+- Elastic security alerts and rules
+  
+**Commands Used:**
+
+```
+
+Security > Alerts - Manage Rules
+Add Elastic rules - Install All , Go back to Installed Elastic rules
+
+Rules must be enabled , view Potential Successful SSH Brute Force Attack - enable
+
+hydra attack against linux target via ssh brute force password guessing
+
+```
+
+**Issues**
+Non at this time.
