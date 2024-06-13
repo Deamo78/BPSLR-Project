@@ -299,13 +299,13 @@ Date: *11/06/2024*
     - Name: Realtek PCIe GBE Family Controller
 
 **Tasks Assigned:**
-- Kali Purple (Internal)  
-Testing RBT activities  
-Configuring Elastic security alerts and rules  
-- Elastic Login
-  https://192.168.100.250:9200
-  Username: elastic
-  Password: FKEn7VZpCDgA=BT5T36X
+- Kali Purple (Internal)   
+Testing RBT activities    
+Configuring Elastic security alerts and rules   
+- Elastic Login  
+  https://192.168.100.250:9200  
+  Username: elastic  
+  Password: FKEn7VZpCDgA=BT5T36X  
 **Tasks Completed:**
 - Enable HTTPS for Kibana  
 
