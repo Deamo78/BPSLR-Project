@@ -1,0 +1,30 @@
+Weekly Meeting 1 - Github project process review
+07/5/2024. Time - 2:00pm 
+7th May, Thursday.
+Duration of meeting: 20 minutes
+
+
+After completion of the weekly meeting. We discussed about the effectiveness of using a github repository for our ict project. We all provided insights that setting up a github will help with documenting our team process. During the process review, all team members created their own branches inside the repository, the branches will align with our indivdual work and current state in the ict project.
+
+
+Weekly Meeting 2 - Github project process review
+30/5/2024. Time - 2:00pm 
+30th May, Thursday.
+Duration of meeting: 15 minutes
+
+After completion of our second weekly meeting. We discussed how the use of github is going and how the process of documentation is continuing to help our team process flow. During the process review all the team member have added addition documentation of the current project state they're in.
+
+Weekly Meeting 3 - Github project process review
+4/6/2024. Time - 2:35pm 
+4th June, Thursday. 
+Duration of meeting: 15 minutes
+
+After completion of our third weekly meeting. We continued to add documentation and issues we've came across and shared, into the github repository.
+
+Weekly Standup Meeting 4 - Github project process review
+
+Date: 13/06/2024
+13th June, Thursday
+Duration of meeting: 15 minutes
+
+After completion of our fouth weekly meeting. We continued to add documentation and issues we've so far came across and shared, about the ict project into the github repository
