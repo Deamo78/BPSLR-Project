@@ -1,24 +1,23 @@
-Weekly meeting 4/06/2024 time 3:36 
+Weekly Meeting 1
+4/6/2024. Time - 2:35pm 
+4th June, Thursday. 
+Duration of meeting: 15 minutes
 
 
+Agenda 1: 
+Discussion of our Windows 10 Clients
 
-
-
-agenda: 
-discussion on our windows 10 client 
-
-agenda 2 
-marking objectives of  with trello
-
-checking off each members objectives
-sebastion completed prototpye 
-phoebe completed prototype 
+Agenda 2: 
+Marking objectives off with Trello
+Checking off each members objectives
+Sebastian completed prototpye 
+Phoebe completed prototype 
 Luke done the 6.3 prototype 
 
-angenda 3 
-Phoebe and ryan working on internal and external kali's 
+Angenda 3: 
+Phoebe and Ryan are working on Internal and External Kali VMs.
 
 
-action: put notes on documentation 
-action: do the configuration of vlan 
-action install elastic defend on dmz 
+Action 1: Put notes, usernames/passwords and all of our documentation into our own respective branches on GitHub.
+Action 2: Do the configuration of Vlan 
+Action 3: Install elastic defend on DMZ
