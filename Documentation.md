@@ -357,7 +357,7 @@ Date: *13/06/2024*
 
 **Kali Internal**
     - Username: kaliinternal
-    - Password: Password2
+    - Password: Password1
 - OS: Linux, Ubuntu (64-bit)
 - iso: kali-linux-2023.4-installer-purple-amd64.iso
 - Specs: 4GB RAM, 1 CPU Threads, 50GB Storage
@@ -385,4 +385,45 @@ hydra attack against linux target via ssh brute force password guessing
 ```
 
 **Issues**
-Non at this time.
+None at this time.
+
+                                               Day Seven
+                                            
+Name: *Ryan Saunders*  
+Date: *18/06/2024*  
+
+
+**VM's:**
+
+**Windows 10 Client**
+    - PC-Name: DESKTOP-RYAN
+    - Username: Ryan
+    - Password: Password1
+- OS: Windows 10 (64-Bit)
+- iso: en_windows_10_eval_22h2_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso
+- Specs: 8GB RAM, 2 CPU Threads, 50GB Storage
+- Network Adapter: Bridged Adapter
+    - Name: Realtek PCIe GBE Family Controller
+
+**Kali Internal**
+    - Username: kaliinternal
+    - Password: password1
+- OS: Linux, Ubuntu (64-bit)
+- iso: kali-linux-2023.4-installer-purple-amd64.iso
+- Specs: 4GB RAM, 1 CPU Threads, 50GB Storage
+- Network Adapter: Bridged Adapter
+    - Name: Realtek PCIe GBE Family Controller
+
+
+**Tasks Assigned:**
+- Perform a pentest and monitor as Blue team
+
+**Tasks Completed:**
+- 
+
+**Commands Used:**
+```
+
+```
+
+**Issues**
