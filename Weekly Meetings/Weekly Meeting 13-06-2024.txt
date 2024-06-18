@@ -17,14 +17,14 @@ Reviewing Trello and checking off Jobs completed
 Progress:
 Group policies done by Luke 
 Checking off group members objectives
-Checking members progress on there task 
+Checking members progress on their task 
 Checking all computers are communicating 
 Checking overall members task such as protypes. 
 
 Actions:
 Creating a record for kali siem in window server 22 due date 19/06/2024 
-Kali internal  do hyrda attack to get logs on the kali external elastic and the siem elastic 
+Kali internal, do hydra attack to get logs on the kali external elastic and the siem elastic 
 Fix Greenbone error. 
-Presentation preperations 
+Presentation preparations 
 Reminder to do snapshots 
 Check Brody's objectives 
