@@ -168,7 +168,7 @@ end
 ```
 ### 1.4 Cable up Physical network according to network Diagram
 
-![Network diagram image](images/NetworkDiagram.png)  
+![Network diagram image](Images/NetworkRolesDiagram.png)  
 
 ### 1.5 Zone Location of components
 - Palo Alto Firewall - Inside, Outside, DMZ
@@ -223,129 +223,6 @@ IF using OPNsense firewall your KaliPurle, Windows Server and Windows Client VMs
 #### Palo Alto Firewall (Production):  using bridged Network
 Ultimately all VMs will be bridged to the physical host adapter and connected to the Physical switch and Palo Alto Firewall. 
 This allows multiple Virtual Windows Clients for all SOC Team members to access the one SIEM/SOC from their Windows Clients.  PaloAlto firewall will provide DHCP. 
-
-### 2.3 Install OPNsense Firewall into Virtual Box 
-
-Download OPNsense (dvd:iso) and unzip .iso from here:  https://opnsense.org/download/  
-Verify download checksum: https://docs.opnsense.org/manual/install.html#download-and-verification  
-```
-C:\Users\xxx\Downloads>certutil -hashfile OPNsense-24.1-dvd-amd64.iso.bz2 sha256
-SHA256 hash of OPNsense-24.1-dvd-amd64.iso.bz2:
-6d1e22713bf031d0a36a73b3820cd1564f426cae9c67a6ade4b7fa6518afa2d5
-CertUtil: -hashfile command completed successfully.
-```
-use 7zip to unzip .iso  
-New virtual machine in Virtual Box  
-- attach iso  
-- install directory to portable SSD  
-- General settings > Free BSB 64-bit, 4 Gig RAM, 20 Gig storage   
-
-Virtualbox > new VM  
-
-VM Name and OS  
-
-Name: OPNsenseXX  
-Folder: (on your USB3SSD)  
-ISO Image: OPNsense-24.1-dvd-amd64.iso  
-Type: BSD  
-Version: FreeBSD (64-bit)  
-NEXT  
-
-Hardware
-
-Base Memory: 4 Gig RAM
-Processors: 1
-
-NEXT
-
-Virtual Hard disk  
-
-Create a virtual hard disk now  , 20 Gig storage   
-
-Settings > Network  
-#### Add 2 network adapters cards   
-Network > Adapter 1 - Attached to Internal network  = LAN  
-Network > Adapter 2 - Enable , Attached to Bridged Adapter - Ethernet card on PC (or WIFI)  = WAN  
-
-OK
-
-
-Note: Adapter 1 will be allocated to em0 , Adapter 2 will be allocated to em1 - in OPNsense  
-
-#### Start OPNsense VM and copy files from .iso to virtual disk
-Start OPNsense VM  
-
-login as: installer  
-Passwd: opnsense  
-
-accept defaults 
-
-copy files to disk partition 
-select VBOX HARDDISK 10 (20 GB)  with down arrow  , enter for OK  
-Yes to destroy disk contents  , left arrow and enter  
-files will be copied from the iso to the VDI file
-
-Enter root password: opnsense 
-confirm password
-down arrow to 
-Complete install Exit and reboot  , enter to OK
-
-
-ref: https://gitlab.com/kalilinux/kali-purple/documentation/-/wikis/201_10:-Byzantium-installation
-
-#### shutdown OPNsense and remove .iso from CD drive and reboot
-Start OPNsense VM  
-
-login as: root  
-Passwd: opnsense  
-
-Enter an option: 5  
-Do you want to proceed: y  
-
-Remove iso from CD drive   
-Settings > Storage 
-Optical drive - Remove disk from Virtual Drive  
-
-
-#### Start OPNsense VM and configure LAN
-Start OPNsense VM  
-
-login as: root  
-Passwd: opnsense  
-
-#### 2.3.1 Configure OPNsense firewall 
-WAN interface should get a DHCP allocated IP address  
-
-#### OPNsense Networks
-OPNsense firewall has the following interfaces and Zones:  
-em1 - WAN - 192.168.108.XX/24 where XX is unique (DHCP Allocated initially)   
-em0 - LAN - 192.168.100.1/24 - running a DHCP server  
-em2 - DMZ - 192.168.50.1/24   
-
-
-#### Set up DHCP on LAN interface em0  
-
-Enter an option: 2 (set interface IP address)  
-Enter the number of interface to configure: 1 - LAN (em0)  
-Configure IPv4 address LAN interface via DHCP: N  
-Enter the New LAN IPv4 Address: 192.168.100.1  
-Enter the New LAN IPv4 subnet bit count (1 to 32): 24  
-Configure IPv6...: y  
-Do you want to enable the DHCP server on LAN: y  
-Enter the start address: 192.168.100.40  
-Enter the end address: 192.168.100.49  
-Do you want to change the web GUI protocol from HTTPS to HTTP? : y  
-Restore web GUI access defaults: y  
-
-
-
-#### shutdown OPNsense and remove .iso from CD drive and reboot
-
-#### 2.3.2 Integrating OPNsense firewall with internal hosts 
-When using OPNsense firewall , internal hosts will be attached to the virtualBox internal network
-Ie - KaliPurple, Windows Server 22, Windows client
-
-####
 
 ### 2.4 Install kali Purple
 
