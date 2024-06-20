@@ -419,11 +419,96 @@ Date: *18/06/2024*
 - Perform a pentest and monitor as Blue team
 
 **Tasks Completed:**
-- 
-
-**Commands Used:**
-```
-
-```
+- Nothing because the alerts are still not working. 
 
 **Issues**
+- Kali external wasnt actually on the outside network, causing the issue of true pentesting as a red team member
+
+                                               Day Seven
+                                            
+Name: *Ryan Saunders*  
+Date: *20/06/2024*  
+
+
+**VM's:**
+
+**Windows 10 Client**
+    - PC-Name: DESKTOP-RYAN
+    - Username: Ryan
+    - Password: Password1
+- OS: Windows 10 (64-Bit)
+- iso: en_windows_10_eval_22h2_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso
+- Specs: 8GB RAM, 2 CPU Threads, 50GB Storage
+- Network Adapter: Bridged Adapter
+    - Name: Realtek PCIe GBE Family Controller
+
+**Kali Internal**
+    - Username: kaliinternal
+    - Password: password1
+- OS: Linux, Ubuntu (64-bit)
+- iso: kali-linux-2023.4-installer-purple-amd64.iso
+- Specs: 8GB RAM, 1 CPU Threads, 50GB Storage
+- Network Adapter: Bridged Adapter
+    - Name: Realtek PCIe GBE Family Controller
+
+
+**Tasks Assigned:**
+- Perform a pentest and monitor as Blue team with Elastic Alerts
+- Take a bunch of screenshots in preparation for the presentation
+
+**Tasks Completed:**
+
+**Commands Used**
+```
+curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.14.0-linux-x86_64.tar.gz
+tar xzvf elastic-agent-8.14.0-linux-x86_64.tar.gz
+cd elastic-agent-8.14.0-linux-x86_64
+sudo ./elastic-agent install \
+  --fleet-server-es=https://192.168.100.250:9200 \
+  --fleet-server-service-token=AAEAAWVsYXN0aWMvZmxlZXQtc2VydmVyL3Rva2VuLTE3MTg4NTU4MTgxNjA6Smo2cUpFbUdSOG0xTGlPODVpSGF3Zw \
+  --fleet-server-es-ca-trusted-fingerprint=499a720f305b17cebec8b7bc3b79565152a3c0c188a909d9b28bbd60e0c5191f \
+  --fleet-server-port=8220
+```
+-  Screenshots taken
+-  Made a branch called "Presentation"
+
+**Issues**
+- Still no alerts
+- When I installed the fleet server, my VM was running at 100% CPU usage. I even upgraded the RAM and CPU to 8GB RAM and 2 Cores for the CPU
+
+##MAJOR SCREWUP##
+-Misunderstood instructions. Was meant to be red Teaming with Phoebe but performing as an internal attack vector.
+
+use OWAP ZAP
+ref(Cisco EH - 6.12.13)
+kali menu -> zap
+
+Automated scan
+URL to Attack: 192.168.50.100
+Attack
+
+Alerts tab
+
+**Commands Used**
+```
+nmap -sn
+nmap -sT
+nmap -O 192.158.50.100
+nmap -p80 -sV -A 192.158.50.100
+
+nmap -A -p139,445 192.168.100.100    # SMB ports
+nmap --script smb-enum-users.nse -p139,445 192.168.100.100
+nmap --script smb-enum-shares.nse -p445 192.168.100.100
+
+ping -c5 192.168.50.100
+nmap -sV 192.168.50.100
+sudo nmap -O 192.168.50.100
+nmap -sV --script vulners --script-args mincvss=4 192.168.50.100
+
+nikto --help
+nikto -h 192.168.50.100
+nikto -h 192.168.50.100 -ssl
+nikto -h 192.168.50.100 -o pentest.htm
+nikto -h 192.168.50.100 -o scan_results.txt -Format csv
+
+```
