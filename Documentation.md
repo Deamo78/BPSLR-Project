@@ -253,3 +253,67 @@ switchport port-security maximum 5
 switchport port-security mac-address 0800.2750.bef5 vlan access
 switchport port-security mac-address 74d4.355f.70c7 vlan access
 ```
+
+---
+
+*18/06/2024*
+
+Created a security profile group containing the below security profiles:  
+
+***Production-Security-Group***
+- **Antivirus:** cloned from default
+- **Anti-Spyware:** cloned from strict
+- **Vulnerability Protection:** cloned from strict
+- **File Blocking:** cloned from strict file blocking
+- **WildFire Analysis:** cloned from default
+
+Applied Production-Security-Group to security policies:
+- outside-to-DMZ
+- secPol-DMZ-to-inside
+
+Issues that have been fixed:
+
+Phoebe's Kali External VM was running on the internal network (192.168.100.X) not the external network (192.168.108.X), fixed this issue by patching her computer to the 108 network, and ensuring that she received a correct IP address. This will ensure that all her red team testing going forward will operate from an external standpoint.
+
+Commands used:
+
+```
+sudo nano /etc/network/interfaces
+systemctl restart networking
+ip a
+ping 192.168.108.1
+ping 8.8.8.8
+```
+
+Issues:  
+- Phoebe's ZAP test only worked using 192.168.108.132, not 192.168.50.100 (as per documentation)
+- Seb is able to see palo alto firewall threat logs in wireshark (Filters: tcp, port 9001) but not in elastic/kibana - needs to set up: SSH alert generation
+
+---
+
+*20/06/2024*
+
+**Red and Blue Team Testing**
+
+Team Roles:
+
+<ins>Red Team (Attack)</ins>
+
+- Phoebe - Kali External
+- Ryan - Kali Internal
+- Luke - developing pentesting methods for red team to use
+  
+<ins>Blue Team (Defence)</ins>
+  
+- Seb - Kali Purple SIEM
+- Brody - Firewall/Switch
+
+Today red team were trying different pentesting methods and attack techniques in an attempt to generate logs and alerts on elastic/kibana and the firewall.
+Initially we were only using Phoebe's Kali External machine to attack the network. This resulted in the majority of her attacks failing because we already had strong firewall security policies in place (outside-to-DMZ) to mitigate outside threats.
+
+To combat this: we temporarily relaxed the firewall security policy (outside-to-DMZ) to exactly match (Inside_To_DMZ).  
+This resulted in HTTPS and SSH attacks successfully attacking the DMZ web server.  
+The DMZ web server SSH password was cracked using a brute force technique with the hydra tool.  
+The DMZ web server was also able to be scanned for vulnerabilites using the OWASP ZAP scanning tool.
+
+Note: The difference in results between Phoebe and Ryan's attacks should demonstrate how our CSOC protects against external attacks vs internal attacks.
