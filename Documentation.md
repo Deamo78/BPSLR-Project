@@ -207,7 +207,8 @@ line vty 0 4
 access-class ADMIN-MGMT in
 
 show accesss-lists
-```
+```  
+<p>&nbsp;</p>
 
 Cisco switch logging, port-security logging (auto if violation mode is shutdown by default):
 
@@ -223,7 +224,16 @@ logging facility auth
 - Need seb to install Cisco IOS elastic integration on SIEM
 - NTP if time permits  
 
-Elastic agent has been installed on Windows 10 Client and successfully integrated with the Fleet server on SIEM
+Elastic agent has been installed on Windows 10 Client and successfully integrated with the Fleet server on SIEM.  
+The following script was used in PowerShell:
+
+```
+$ProgressPreference = 'SilentlyContinue'  
+Invoke-WebRequest -Uri https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.13.4-windows-x86_64.zip -OutFile elastic-agent-8.13.4-windows-x86_64.zip  
+Expand-Archive .\elastic-agent-8.13.4-windows-x86_64.zip -DestinationPath .  
+cd elastic-agent-8.13.4-windows-x86_64  
+.\elastic-agent.exe install --url=https://192.168.100.200:8220 --enrollment-token=VFZDZWVvOEJ0LTJrdzAtaEVwWXU6RjNhcFBHMG9SSXlZZTYtOXBMOXg3Zw== --insecure
+```
 
 ---
 
@@ -260,7 +270,7 @@ switchport port-security mac-address 74d4.355f.70c7 vlan access
 
 Created a security profile group containing the below security profiles:  
 
-***Production-Security-Group***
+<ins>Production-Security-Group</ins>
 - **Antivirus:** cloned from default
 - **Anti-Spyware:** cloned from strict
 - **Vulnerability Protection:** cloned from strict
