@@ -424,7 +424,7 @@ Date: *18/06/2024*
 **Issues**
 - Kali external wasnt actually on the outside network, causing the issue of true pentesting as a red team member
 
-                                               Day Seven
+                                               Day Eight
                                             
 Name: *Ryan Saunders*  
 Date: *20/06/2024*  
@@ -512,3 +512,52 @@ nikto -h 192.168.50.100 -o pentest.htm
 nikto -h 192.168.50.100 -o scan_results.txt -Format csv
 
 ```
+                                              Day Nine
+                                            
+Name: *Ryan Saunders*  
+Date: *21/06/2024*  
+
+
+**VM's:**
+
+**Windows 10 Client**
+    - PC-Name: DESKTOP-RYAN
+    - Username: Ryan
+    - Password: Password1
+- OS: Windows 10 (64-Bit)
+- iso: en_windows_10_eval_22h2_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso
+- Specs: 8GB RAM, 2 CPU Threads, 50GB Storage
+- Network Adapter: Bridged Adapter
+    - Name: Realtek PCIe GBE Family Controller
+
+**Kali Internal**
+    - Username: kaliinternal
+    - Password: password1
+- OS: Linux, Ubuntu (64-bit)
+- iso: kali-linux-2023.4-installer-purple-amd64.iso
+- Specs: 4GB RAM, 1 CPU Threads, 50GB Storage
+- Network Adapter: Bridged Adapter
+    - Name: Realtek PCIe GBE Family Controller
+
+
+**Tasks Assigned:**
+- Red Teaming using Venom
+
+**Tasks Completed:**
+- installed Venom and ran the following
+    - Brute Force
+    - 
+**Commands Used**
+```
+sudo apt update && sudo apt upgrade -y
+1.) attack 1 Venom
+Install Venom from https://github.com/hackingmastert56/Venom-Tools-Installer/
+cd Venom-Tools-Installer 
+chmod +x setup.sh
+chmod +x venom.sh
+./venom.sh
+```
+
+**Issues**
+- couldnt install Hydra. Broken packages
+- something to do with libfreerdp2-2t64 : Depends: libavcodec60 (>= 7:6.0)
