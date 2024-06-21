@@ -23,6 +23,7 @@ This is documentation about the VM's that I have installed for the production ne
 
 ### My notes and progress
 These are notes and my progress with timestamps of what i've done for the production network
+  - 18/06/24 Completed tasks, 16.1, 16.2, 16.3, 16.4
   - 13/06/24 Added rules for alert to brute force ssh (Still doesn't work WIP) finished the KaliSiem at this point, need to update all intergrations and agents afterwards
   - 11/06/24 Installed CISO IOS intergration onto the elastic, and have configured the switch to send logs between the two
   - 04/06/24 Connected Windows10 Clients to Elastic and DMZ web server, up to step 8.5
@@ -69,9 +70,9 @@ These are notes and my progress with timestamps of what i've done for the produc
 #### 13.0 Kibana discover
 #### 13.1 Kibana discover - Endpoints Network events  (sample filters)
 #### 13.4 Kibana Alerts
-## Tasks that yet to be completed
 #### 16.0 Managing SIEM Updates
 #### 16.1 Update kaliPurple and kibana
 #### 16.2 Update Elastic integrations
 #### 16.3 Update fleet and agents
 #### 16.4 checking client agents
+## Tasks that yet to be completed
