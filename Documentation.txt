@@ -123,7 +123,8 @@ Steve also helped me with recovering my Client Prod, made imported/made a new VM
 I'm trying the nmap ones again from the ICT project GitHub, as Luke installed nmap for me.
 
 Types of red team attacks I've done so far:
-NIKTO, NMAP, ZAP, Hydra, Arp-scan/arp-poisoning (Steve said this was for Internal network, this somehow worked for the External network, Steve [and I] thought this was interesting - I have put my results on the CSOC Presentation as screenshots.)
+NIKTO, NMAP, ZAP, Hydra, Arp-scan/arp-poisoning (Steve said this was for Internal network, this somehow worked for the External network, Steve [and I] thought this was interesting - I have put my results on the CSOC Presentation as screenshots.) 
+During or afer the minute meeting today 25/06/2024, Steve said that he was happy with the work I've done and he doesn't need to see the fixed hydra attack.
 
 I can't get the DSniff tool to work, so I will leave that red team attack and move on with something else.
 Steve has said I have done a lot of red team attacks already, Steve doesn't mind how many are done.
