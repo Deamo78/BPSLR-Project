@@ -23,6 +23,13 @@ This is documentation about the VM's that I have installed for the production ne
 
 ### My notes and progress
 These are notes and my progress with timestamps of what i've done for the production network
+  - 25/06/24 Took more screenshots and performed more Red & Blue testing
+    - A TCP flood attack which was logged into the alerts
+    - A Nmap scan that logged into the alerts
+    - A attempted Dos attack which was logged into the alerts
+  - 21/06/24 Took more screenshots and performed Red and Blue testing the network
+  - 20/06/24 Prepared and took screenshosts from completed tasks needed for the presentation
+    - Peformed a successful ssh brute force attack with logged the attack with a alert
   - 18/06/24 Completed tasks, 16.1, 16.2, 16.3, 16.4
   - 13/06/24 Added rules for alert to brute force ssh (Still doesn't work WIP) finished the KaliSiem at this point, need to update all intergrations and agents afterwards
   - 11/06/24 Installed CISO IOS intergration onto the elastic, and have configured the switch to send logs between the two
