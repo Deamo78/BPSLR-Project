@@ -91,7 +91,6 @@ https://www.reddit.com/r/virtualbox/comments/19dj8ce/cannot_get_guest_additions_
 
 2024/06/11 - Phoebe Cooney
 ###GREENBONE###
-
 Finished installing Greenbone - The user name and password is below to login to Greenbone
 Username: Phoebe
 Password: Password
@@ -106,7 +105,28 @@ Error msg - 'Failed to find port_list '33d0cd82-57c6-11e1-8ed1-406186ea4fc5'.
 
 
 
+2024/06/25 - Phoebe Cooney
+##########RED TEAM-KALI EXTERNAL ACTIVITIES###########
+To do:
+Download vulnerability scanners
+Try and use the red team tools like DoS, dsniff and arp-scan.
+Links to help:
+https://www.esecurityplanet.com/networks/kali-linux-tutorial/
+https://www.kali.org/tools/dsniff/
+https://linux.die.net/man/8/dsniff
+https://github.com/tecknicaltom/dsniff
+https://tournasdimitrios1.wordpress.com/2011/03/04/password-sniffing-with-dsniff-on-the-local-network/
 
+Steve helped me get internet connection on my KaliExternal Prod - PC VM, my gateway was wrong, but also when I ping the gateway after the changes were made and the vm had rebooted I could ping 8.8.8.8 and 192.168.108.1. 
+Steve also helped me with recovering my Client Prod, made imported/made a new VM and imported the .vdi from the Client Prod in place of the broken one (remove the broken one first, then added the directory of the NEW vm and the original .vdi that didn't work/boot.)
+
+I'm trying the nmap ones again from the ICT project GitHub, as Luke installed nmap for me.
+
+Types of red team attacks I've done so far:
+NMAP, ZAP, Hydra, Arp-scan/arp-poisoning (Steve said this was for Internal network, this somehow worked for the External network, Steve [and I] thought this was interesting - I have put my results on the CSOC Presentation as screenshots.)
+
+I can't get the DSniff tool to work, so I will leave that red team attack and move on with something else.
+Steve has said I have done a lot of red team attacks already, Steve doesn't mind how many are done.
 
 
 
