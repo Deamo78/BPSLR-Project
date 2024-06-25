@@ -584,9 +584,9 @@ I did this for the sake of time. Installed a bunch of pentest tools, and exporte
     - Name: Realtek PCIe GBE Family Controller
 
 **Kali Internal (Kali Linux)**
-    - PC-Name: DESKTOP-RYAN
-    - Username: Ryan
-    - Password: Password1
+    - PC-Name: Kali internal
+    - Username: Kaliinternal
+    - Password: password1
 - OS: Kali Linux
 - iso: en_windows_10_eval_22h2_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso
 - Specs: 8GB RAM, 2 CPU Threads, 50GB Storage
@@ -601,15 +601,15 @@ I did this for the sake of time. Installed a bunch of pentest tools, and exporte
     - OWAP Zap
     - Greenbone
 **Tasks Completed:**
-- 
+- nmap
 **Commands Used**
   
 ```
 Enumeration with NMAP Scans
-nmap -sn 192.158.50.100
-nmap -sT 192.158.50.100
-nmap -O 192.158.50.100
-nmap -p80 -sV -A 192.158.50.100
+nmap -sn 192.168.50.100
+nmap -sT 192.168.50.100
+nmap -O 192.168.50.100
+nmap -p80 -sV -A 192.168.50.100
 
 nmap -A -p139,445 192.168.100.100    # SMB ports
 nmap --script smb-enum-users.nse -p139,445 192.168.100.100
@@ -621,25 +621,10 @@ nmap -sV 192.168.50.100
 sudo nmap -O 192.168.50.100
 nmap -sV --script vulners --script-args mincvss=4 192.168.50.100
 
-#GVM
-sudo gvm-check-setup
-sudo gvm-stop
-
-#using GVM vulnerability scanner
-sudo gvm-start
-#https://127.0.0.1:9392
-#Username: admin
-#Password: kali
-#Scans -> Tasks
-#IP address or hostname: 192.168.50.100
-#Download the report by clicking the Download Filtered Report button
-sudo gvm-stop
-
 #Nikto WEB vulnerability scan
-nikto --help
 nikto -h 192.168.50.100
 nikto -h 192.168.50.100 -ssl
-nikto -h 192.168.50.100 -o pentest.htm
+nikto -h 192.168.50.100 -o pentest.html
 nikto -h 192.168.50.100 -o scan_results.txt -Format csv
 
 #use OWAP ZAP
@@ -649,7 +634,13 @@ nikto -h 192.168.50.100 -o scan_results.txt -Format csv
 #Attack
 #Alerts tab
 
+#SYN Flood
+nping --tcp-connect -p 80 --rate 10000 -c 50 192.168.50.100
+
+#DOS
+nmap --script http-slowloris --max-parallelism 10 192.168.50.100
+
 ```
 
 **Issues**
-- 
+- struggled to install anything at first
