@@ -23,6 +23,7 @@ This is documentation about the VM's that I have installed for the production ne
 
 ### My notes and progress
 These are notes and my progress with timestamps of what i've done for the production network
+  - 27/06/24 Completed the production network project and screenshots required for the presentation
   - 25/06/24 Took more screenshots and performed more Red & Blue testing
     - A TCP flood attack which was logged into the alerts
     - A Nmap scan that logged into the alerts
@@ -83,3 +84,10 @@ These are notes and my progress with timestamps of what i've done for the produc
 #### 16.3 Update fleet and agents
 #### 16.4 checking client agents
 ## Tasks that yet to be completed
+#### None! The KaliSiem and Windows 10 Client in the production network has been completed
+
+## Additional Notes
+### Identifying the components of a CSOC
+  A CSOC (Cyber security operation centre) consists of having a SIEM system, IDS/IPS, endpoint security solutions, threat intelligence platforms, analysis tools. Having these solutions and platforms intergrated into the SIEM system and can be used to anaylsis data, logs, metrics and any alerts to the SIEM system, will pick up by the endpoint security solutions. By deploying these tools and solutions it enables for continuous monitoring of the CSOC and that all systems and network are integrated into the monitoring system and configuration for alerting, threat detecting for any security incidents.
+  ### Components of a CSOC used in the project
+  The project I worked on used components that would come from a CSOC. These components consist of the installation of a SIEM onto Kali,
