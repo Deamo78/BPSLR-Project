@@ -87,7 +87,25 @@ These are notes and my progress with timestamps of what i've done for the produc
 #### None! The KaliSiem and Windows 10 Client in the production network has been completed
 
 ## Additional Notes
-### Identifying the components of a CSOC
-  A CSOC (Cyber security operation centre) consists of having a SIEM system, IDS/IPS, endpoint security solutions, threat intelligence platforms, analysis tools. Having these solutions and platforms intergrated into the SIEM system and can be used to anaylsis data, logs, metrics and any alerts to the SIEM system, will pick up by the endpoint security solutions. By deploying these tools and solutions it enables for continuous monitoring of the CSOC and that all systems and network are integrated into the monitoring system and configuration for alerting, threat detecting for any security incidents.
-  ### Components of a CSOC used in the project
-  The project I worked on used components that would come from a CSOC. These components consist of the installation of a SIEM onto Kali,
+### Explaining the model of cybersecurity implemented in the project and the benefits to an organization of this model
+We have implemented a SIEM (Security Information and event management) which is a model that helps organizations detect, analyze and respond to security threats before they cause any harm. The SIEM technology collects event log data from ranges of sources and identifies activity that isn't normal with real-time analysis. 
+
+The benefit of having a SIEM gives organizations visibility into activity within their own network so they can respond and detect to any potential cyberattacks and can help improve an organization's security stance. These can include:
+- Central view of potential threats
+- Advanced threat intelligence
+- Transparency monitoring users, applications and devices
+- Regular compliance auditing and reporting 
+### Identifing the components of a CSOC (Cyber security operation Centre) and which of these components were implemented in the project
+A CSOC (Cyber security operation Centre) consists of having a SIEM system, IDS/IPS, endpoint security solutions, threat intelligence platforms, analysis tools. Having these solutions and platforms integrated into the SIEM system and can be used to analysis data, logs, metrics and any alerts to the SIEM system, will pick up by the endpoint security solutions. By deploying these tools and solutions it enables continuous monitoring of the CSOC and that all systems and network are integrated into the monitoring system and configuration for alerting, threat detecting for any security incidents.
+
+The components that were implemented into the project were:
+- SIEM
+  - The SIEM was hosted on a kali purple machine and used as the main security information and event management.
+- IDS/IPS
+  - The Palo Alto firewall was used as the IDS/IPS, this was enabled by implementing security policies which would detect and prevent threats aswell as generate logs whenever it will discover any detects.
+- The Elastic Stack
+  - Which is a combination of products such as Kibana, Elasticsearch and more that is reliable and secure to take data from any collected source in any format and then perform searchs, anaylzing and visualisations. Hosted on the KaliPurpleSiem
+    - Kibana which gives you a user interface to view and explore your collected data and logs.
+    - ElasticSearch which is used for log analytics, indexing, searching, all in near realtime for all data types.
+- Integrations
+  - Are elastic integrations that connect to external services and systems, an example of it can be used to intregrate endpoint security solutions towards any machine connected to the network and the integration can provide preventations against, malware, ransomware and any malicious execution on the host.
