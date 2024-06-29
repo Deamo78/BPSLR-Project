@@ -327,3 +327,55 @@ The DMZ web server SSH password was cracked using a brute force technique with t
 The DMZ web server was also able to be scanned for vulnerabilites using the OWASP ZAP scanning tool.
 
 Note: The difference in results between Phoebe and Ryan's attacks should demonstrate how our CSOC protects against external attacks vs internal attacks.
+
+---
+
+*25/06/2024*
+
+Worked on more red and blue team testing.  
+Used Palo Alto Lab 6 - Blocking Packet and Protocol Based Attacks as a basis for firewall protections to apply.
+
+1.3 - Configure and Test TCP SYN Flood Zone Protection
+
+Configured a zone protection profile for the DMZ:
+  - Flood Protection
+  - Action: SYN Cookies
+  - Alarm Rate: 5 connections/sec
+  - Activate: 10 connections/sec
+  - Maximum: 20 connections/sec
+ 
+Could also have implemented Reconnaissance Protection for DMZ if time had permitted:
+  - TCP Port Scan, Host Sweep, UDP Port Scan
+
+Test the zone protection profile by generating a SYN Flood:  
+
+    nping --tcp-connect -p 80 --rate 10000 -c 50 -1 192.168.50.100
+
+1.5 - Concurrent Sessions on a Target Host and DoS Protection
+
+Objects > Security Profiles > DoS Protection
+
+  - Name: protect-session-max
+  - Type: Classified
+  - Resources Protection: Sessions
+  - Maximum Concurrent Sessions: 9
+
+Policies > DoS Protection
+
+  - Name: DMZ-protection
+  - Source: Inside, Outside
+  - Destination: DMZ
+  - Action: Protect
+  - Select Classified
+  - Profile: protect-session-max
+  - Address: destination-ip-only
+
+Test the DoS Protection profile and policy using Nmap script to open concurrent sessions to DMZ:  
+
+    nmap --script http-slowloris --max-parallelism 10 192.168.50.100
+
+Note: Needed to temporarily remove security profile group to generate threat logs for flood and DoS attacks. Also source address shows as 0.0.0.0 in logs.
+
+Threat logs displayed: 
+  - TCP Flood
+  - Session Limit Event
