@@ -335,9 +335,12 @@ Note: The difference in results between Phoebe and Ryan's attacks should demonst
 Worked on more red and blue team testing.  
 Used Palo Alto Lab 6 - Blocking Packet and Protocol Based Attacks as a basis for firewall protections to apply.
 
-1.3 - Configure and Test TCP SYN Flood Zone Protection
+#### <ins>Configured a zone protection profile for the DMZ:</ins>
 
-Configured a zone protection profile for the DMZ:
+  ref 1.3 - Configure and Test TCP SYN Flood Zone Protection
+
+*Network > Network Profiles > Zone Protection*
+
   - Flood Protection
   - Action: SYN Cookies
   - Alarm Rate: 5 connections/sec
@@ -351,16 +354,18 @@ Test the zone protection profile by generating a SYN Flood:
 
     nping --tcp-connect -p 80 --rate 10000 -c 50 -1 192.168.50.100
 
-1.5 - Concurrent Sessions on a Target Host and DoS Protection
+#### <ins>Configured DoS protection for the DMZ:</ins>
 
-Objects > Security Profiles > DoS Protection
+ref 1.5 - Concurrent Sessions on a Target Host and DoS Protection
+
+*Objects > Security Profiles > DoS Protection*
 
   - Name: protect-session-max
   - Type: Classified
   - Resources Protection: Sessions
   - Maximum Concurrent Sessions: 9
 
-Policies > DoS Protection
+*Policies > DoS Protection*
 
   - Name: DMZ-protection
   - Source: Inside, Outside
